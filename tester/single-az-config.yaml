@@ -1,6 +1,6 @@
 cluster:
   kops:
-    stateFile: s3://k8s-kops-csi-e2e
+    stateFile: s3://k8s-kops-csi-e2e-yayberk
     zones: us-west-2a
     nodeCount: 3
     nodeSize: c5.large
@@ -92,7 +92,7 @@ install: |
 
 uninstall: |
   echo "Removing driver"
-  bin/helm del --purge aws-ebs-csi-driver
+  bin/helm delete aws-ebs-csi-driver
 
 test: |
   go get github.com/onsi/ginkgo/ginkgo
